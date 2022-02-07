@@ -18,9 +18,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3ws1@-ue7$ae8n^y@a+yb*=b^ftp&g$!@f!6zk=s-*kcxl7*+j'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
@@ -169,17 +166,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "user.User"
 
-MEDIAFILES_LOCATION = 'media'
-AWS_S3_SECURE_URLS = True
-AWS_QUERYSTRING_AUTH = False  
-
-AWS_ACCESS_KEY_ID = aws_info['ACCESS_KEY'] 
-AWS_SECRET_ACCESS_KEY = aws_info['SECRET_ACCESS_KEY'] 
-AWS_REGION = aws_info['REGION']
-AWS_STORAGE_BUCKET_NAME = 'wemory'
-AWS_S3_CUSTOM_DOMAIN = 'wemory.s3-ap-northeast-1.amazonaws.com'
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'path/to/store/my/files/')
